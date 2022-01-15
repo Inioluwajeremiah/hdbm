@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+<p class="wlc-text">Welcome <br />{{ current_user.username }}</p>
+<p class="sub-title success-message sms">Search results</p>
+<p class="error-message sms">{{ fill_fields }}</p>
+<table id="admin-scholarship-table">
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <!-- <th>Passport</th> -->
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th>Department</th>
+      <th>Course</th>
+      <th>Level</th>
+      <th>Hall</th>
+      <th>Block</th>
+      <th>Room no</th>
+      <th>Date</th>
+      <th>Add/Edit</th>
+    </tr>
+  </thead>
+  <tbody id="admin-table-body">
+    {% for std_data in searchUsers %}
+    <tr>
+      <td>{{std_data.id}}</td>
+      <td>{{std_data.lastname}}</td>
+      <td>{{std_data.firstname}}</td>
+      <td>{{std_data.middlename}}</td>
+      <td>{{std_data.department}}</td>
+      <td>{{std_data.course}}</td>
+      <td>{{std_data.level}}</td>
+      <td>{{std_data.hallname}}</td>
+      <td>{{std_data.blockname}}</td>
+      <td>{{std_data.roomno}}</td>
+      <td>{{std_data.dateTime}}</td>
+      <td>
+        <button class="edit-btn table-btn">
+          <a href="/edit/{{std_data.id}}">Edit</a>
+        </button>
+        <br />
+        <button
+          class="delete-btn table-btn"
+          onClick="delRow({{ std_data.id }})"
+        >
+          Del
+        </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

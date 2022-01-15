@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="sub-title">Update data</p>
+<p class="success-message sms">{{ smsg }}</p>
+<p class="error-message sms">{{ fill_fields }}</p>
+<form  action="/update/{{edit_record.id}}" method="POST" class="contactForm" id="contact-form" enctype=multipart/form-data>
+    <div class="inputBox">
+        <input type="text" name="ufirstname" placeholder="Firstname " id="firstname" value="{{edit_record.firstname}}" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="ulastname" placeholder="Lasttname " id="lastname" value="{{edit_record.lastname}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="umiddlename" placeholder="Middlename " id="middlename" value="{{edit_record.middlename}}" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="udepartment" placeholder="Department" id="department" value="{{edit_record.department}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="ucourse" placeholder="Course" id="course" value="{{edit_record.course}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="ulevel" placeholder="Level" id="level" value="{{edit_record.level}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="uhallname" placeholder="Hall name" id="hallname" value="{{edit_record.hallname}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="text" name="ublockname" placeholder="Block name" id="blockname" value="{{edit_record.blockname}}"/>
+    </div>
+    <div class="inputBox">
+        <input type="number" name="uroomno" placeholder="Room No" id="roomno" value="{{edit_record.roomno}}"/>
+    </div>
+    <!-- <div class="inputBox">
+        <p>Upload passport</p>
+        <input type=file name=file>
+    </div> <br> -->
+    <div class="inputBox">
+        <input type="submit" value="Update" name="update" />
+    </div> <br>
+                            
+</form> 
+
+{% endblock %}

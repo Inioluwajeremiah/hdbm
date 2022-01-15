@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block tiltle %} Hallites DBM Software {% endblock %}
+{% block content %}
+<p class="sub-title">Register New Student</p>
+<p class="success-message sms">{{ smsg }}</p>
+<p class="error-message sms">{{ fill_fields }}</p>
+<form  action="/register" method="POST" class="contactForm" id="contact-form" enctype=multipart/form-data>
+    <div class="inputBox">
+        <input type="text" name="firstname" placeholder="Firstname " id="firstname" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="lastname" placeholder="Lasttname " id="lastname" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="middlename" placeholder="Middlename " id="middlename" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="department" placeholder="Department" id="department" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="course" placeholder="Course" id="course" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="level" placeholder="Level" id="level" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="hallname" placeholder="Hall name" id="hallname" />
+    </div>
+    <div class="inputBox">
+        <input type="text" name="blockname" placeholder="Block name" id="blockname" />
+    </div>
+    <div class="inputBox">
+        <input type="number" name="roomno" placeholder="Room No" id="roomno" />
+    </div>
+    <!-- <div class="inputBox">
+        <p>Upload passport</p>
+        <input type=file name=file>
+    </div> <br> -->
+    <div class="inputBox">
+        <input type="submit" value="Register" name="register" />
+    </div> <br>
+                            
+</form> 
+
+{% endblock %}
