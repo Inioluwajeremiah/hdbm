@@ -1,6 +1,6 @@
 # hdbm
 ## Performs CRUD operations using flask web framework and SAQAlchemy database
-### User Login and Registeration
+### User Login and Registration
 ### Creates records in database
 ### Reads and displays records in table format after login
 ### Updates record
